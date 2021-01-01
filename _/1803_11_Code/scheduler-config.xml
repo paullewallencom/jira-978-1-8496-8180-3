@@ -1,0 +1,27 @@
+<scheduler>
+
+    <jobs>
+        <job name="ServicesJob" class="com.atlassian.jira.service.ServiceRunner" />
+        <job name="OptimizeIndexes" class="com.atlassian.jira.issue.index.job.OptimizeIndexJob" />
+        <job name="RefreshActiveUserCount" class="com.atlassian.jira.user.job.RefreshActiveUserCountJob" />
+		<job name="JTricksJob" class="com.jtricks.JTricksScheduledJob" />
+    </jobs>
+
+    <triggers>
+        <!-- trigger type may be 'simple' (default) or 'cron' -->
+        <trigger name="ServicesTrigger" job="ServicesJob">
+            <startDelay>1m</startDelay> <!-- start delay is a DateUtils duration! -->
+            <period>1m</period> <!-- amount of time between repeats -->
+        </trigger>
+        <trigger name="OptimizeIndexesTrigger" job="OptimizeIndexes" type="cron">
+            <expression>0 0 0 * * ?</expression><!-- run at midnight -->
+        </trigger>
+        <trigger name="RefreshActiveUserCountTrigger" job="RefreshActiveUserCount" type="cron">
+            <expression>0 0 0/2 * * ?</expression><!-- run every 2 hours -->
+        </trigger>
+		<trigger name="JTricksJobTrigger" job="JTricksJob" type="cron">
+            <expression>0 0/2 * * * ?</expression><!-- run every 2 minutes -->
+        </trigger>
+    </triggers>
+
+</scheduler>

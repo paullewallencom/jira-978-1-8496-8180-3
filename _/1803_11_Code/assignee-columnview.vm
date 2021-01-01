@@ -1,0 +1,9 @@
+#if($assigneeUsername)
+    #if ($displayParams && $displayParams.nolink)
+        $userformat.formatUser($assigneeUsername, 'fullName', 'assignee')
+    #else
+        <span class="tinylink">$userformat.formatUser($assigneeUsername, 'twitterLink', 'assignee')</span>
+    #end
+#else
+    <em>$i18n.getText('common.concepts.unassigned')</em>
+#end

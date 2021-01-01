@@ -1,0 +1,22 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.jtricks</groupId>
+    <artifactId>rest-client</artifactId>
+    <packaging>jar</packaging>
+    <version>1.0.0</version>
+
+    <name>REST Client</name>
+    <description>A sample REST Client</description>
+
+    <url>http://www.j-tricks.com/</url>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.atlassian.jira</groupId>
+            <artifactId>jira-rest-java-client</artifactId>
+            <version>0.2.1</version>
+        </dependency>
+    </dependencies>
+
+</project>

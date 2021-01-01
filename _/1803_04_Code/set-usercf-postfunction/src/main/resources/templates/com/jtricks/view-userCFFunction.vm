@@ -1,0 +1,3 @@
+#if ($user)
+	The 'Test User' CF will be set with value : $user
+#end

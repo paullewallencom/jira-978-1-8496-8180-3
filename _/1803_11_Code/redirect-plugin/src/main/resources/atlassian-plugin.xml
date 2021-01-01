@@ -1,0 +1,16 @@
+<atlassian-plugin key="com.jtricks.redirect" name="Redirect Plugin" plugins-version="2">
+	<plugin-info>
+		<description>Redirect to a link after executing action</description>
+		<version>2.0</version>
+		<vendor name="JTricks" url="http://www.j-tricks.com/" />
+	</plugin-info>
+	
+	<webwork1 key="redirect-key" name="Redirect Action" class="java.lang.Object">
+	    <actions>
+		<action name="com.jtricks.RedirectAction" alias="RedirectAction">
+		    <view name="input">/templates/redirect.vm</view>
+		</action>
+	    </actions>
+	</webwork1>
+    
+</atlassian-plugin>

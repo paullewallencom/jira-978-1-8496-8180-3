@@ -1,0 +1,18 @@
+<atlassian-plugin key="com.jtricks.module" name="Module Type Plugin" plugins-version="2">
+	<plugin-info>
+		<description>New module type for JIRA</description>
+		<version>2.0</version>
+		<vendor name="JTricks" url="http://www.j-tricks.com/" />
+	</plugin-info>	
+	
+	<module-type key="dictionary" class="com.jtricks.DictionaryModuleDescriptor" />
+	
+	<dictionary key="myUSEnglishDictionary" lang="us-english" class="com.jtricks.dictionary.USDictionary" />
+	<dictionary key="myUKEnglishDictionary" lang="uk-english" class="com.jtricks.dictionary.UKDictionary" />
+	
+	<servlet name="Dictionary Servlet" key="dictionaryServlet" class="com.jtricks.DictionaryServlet">
+	    <description>Dictionary Servlet</description>
+	    <url-pattern>/myDictionary</url-pattern>
+	</servlet>
+    
+</atlassian-plugin>

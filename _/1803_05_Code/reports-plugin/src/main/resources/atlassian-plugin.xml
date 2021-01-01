@@ -1,0 +1,139 @@
+<atlassian-plugin key="com.jtricks.reports" name="Reports Plugin" plugins-version="2">
+	<plugin-info>
+		<description>Reports Example</description>
+		<version>2.0</version>
+		<vendor name="JTricks" url="http://www.j-tricks.com/" />
+	</plugin-info>
+
+	<report key="allissues-report" name="All Issues Report"
+	    class="com.jtricks.AllIssuesReport">
+	    <description key="report.allissues.description">
+		This report shows details of all isses a specific project.
+	    </description>
+	 
+	    <!-- the label of this report, which the user will use to select it -->
+	    <label key="report.allissues.label" />
+	 
+	    <!-- the 'view' template is used to render the HTML result -->
+	    <resource type="velocity" name="view"
+		location="templates/allissues/allissues-report.vm" />
+	    <!--
+		The 'excel' template is used to render an Excel result.
+		The 'Excel view' of the report will only be visible if
+		this template exists for the plugin module
+	    -->
+	    <resource type="velocity" name="excel"
+		location="templates/allissues/allissues-report-excel.vm" />
+	 
+	    <!-- this is a .properties file containing the i18n keys for this report -->
+	    <resource type="i18n" name="i18n"
+		location="com.jtricks.allissues.AllIssuesReport" />
+	 
+	    <!-- the properties of this report which the user must select before running it -->
+	    <properties>
+		<property>
+		    <key>projectId</key>
+		    <name>Project</name>
+		    <description>report.allissues.project.description</description>
+		    <!-- valid types are string, text, long, select, date -->
+		    <type>select</type>
+		    <!-- the values generator is a class which will
+		    generate values for this select list -->
+		    <values class="com.jtricks.ProjectValuesGenerator"/>
+		</property>
+		<!--<property>
+                <key>testString</key>
+                <name>Test String</name>
+                <description>Example String property</description>
+                <type>string</type>
+                <default>test default</default>
+         </property>
+         <property>
+                <key>testLong</key>
+                <name>Test Long</name>
+                <description>Example Long property</description>
+                <type>long</type>
+                <default>50</default>
+         </property>
+         <property>
+                <key>testHidden</key>
+                <name>Test Hidden</name>
+                <description>Example Hidden property</description>
+                <type>hidden</type>
+                <default>test hidden val</default>
+         </property>
+         <property>
+                <key>testDate</key>
+                <name>Test Date</name>
+                <description>Example Date property</description>
+                <type>date</type>
+         </property>
+         <property>
+                <key>testUser</key>
+                <name>Test User</name>
+                <description>Example User property</description>
+                <type>user</type>
+         </property>
+         <property>
+                <key>testText</key>
+                <name>Test Text</name>
+                <description>Example Text property</description>
+                <type>text</type>
+         </property>
+         <property>
+		    <key>testMultiSelect</key>
+		    <name>Test Multi Select</name>
+		    <description>Example Multi Select Property</description>
+		    <type>multiselect</type>
+		    <values class="com.jtricks.ProjectValuesGenerator"/>
+		</property>
+		<property>
+		    <key>testCheckBox</key>
+		    <name>Test CheckBox</name>
+		    <description>Example CheckBox Property</description>
+		    <type>checkbox</type>
+		</property>
+		<property>
+		    <key>testFilterPicker</key>
+		    <name>Test Filter Picker</name>
+		    <description>Example Filter Picker Property</description>
+		    <type>filterpicker</type>
+		</property>
+		<property>
+		    <key>testFilterProjectPicker</key>
+		    <name>Test Filter And Project Picker</name>
+		    <description>Example Filter And Project Picker Property</description>
+		    <type>filterprojectpicker</type>
+		</property>
+		<property>
+		    <key>testSelect</key>
+		    <name>Test Select</name>
+		    <description>Example Select Property</description>
+		    <type>select</type>
+		    <values>
+			    <value>
+			        <key>key1</key>
+			        <value>Key 1</value>
+			    </value>
+			    <value>
+			        <key>key2</key>
+			        <value>Key 2</value>
+			    </value>
+			    <value>
+			        <key>key3</key>
+			        <value>Key 3</value>
+			    </value>
+		    </values>
+		</property>
+		<property>
+                <key>testCascadingSelect</key>
+                <name>Test Cascading Select</name>
+                <description>Example Cascading Select</description>
+                <type>cascadingselect</type>
+                <values class="com.jtricks.CascadingValuesGenerator"/>
+                <cascade-from>testSelect</cascade-from>
+            </property> -->
+	    </properties> 
+	</report>
+    
+</atlassian-plugin>

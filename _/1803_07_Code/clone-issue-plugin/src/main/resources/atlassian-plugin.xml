@@ -1,0 +1,17 @@
+<atlassian-plugin key="com.jtricks.clone.issue" name="Clone Issue Plugin" plugins-version="2">
+	<plugin-info>
+		<description>Clone Issue Example</description>
+		<version>2.0</version>
+		<vendor name="JTricks" url="http://www.j-tricks.com/" />
+	</plugin-info>
+	
+	<webwork1 key="jtricks-clone-issue-details" name="JTricks Clone Issue Details" >
+	    <actions>
+	        <action name="com.jtricks.JTricksCloneIssueDetails" alias="CloneIssueDetails">
+		        <view name="input">/secure/views/cloneissue-start.jsp</view>
+		        <view name="error">/secure/views/cloneissue-start.jsp</view>
+		    </action>
+	    </actions>
+	</webwork1>
+    
+</atlassian-plugin>

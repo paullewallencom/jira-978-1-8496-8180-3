@@ -1,0 +1,15 @@
+<atlassian-plugin key="com.jtricks.userformat" name="User Format Plugin">
+	<plugin-info>
+		<description>New User formats</description>
+		<version>2.0</version>
+		<vendor name="JTricks" url="http://www.j-tricks.com/" />
+	</plugin-info>
+
+	<user-format key="twitter-format" name="Twitter User Format"
+		    class="com.jtricks.TwitterUserFormat" system="true">
+		<description>User name linking to twitter</description>
+		<type>twitterLink</type>
+		<resource type="velocity" name="view" location="templates/twitterLink.vm"/>
+	</user-format>
+	
+</atlassian-plugin>

@@ -1,0 +1,5 @@
+<h2>My Input Form</h2><br><br>
+<form method="POST" action="/issues-2.0/secure/DemoAction.jspa">
+Name:  <input type="text" name="userName"><br>
+<input type="submit">
+</form> 

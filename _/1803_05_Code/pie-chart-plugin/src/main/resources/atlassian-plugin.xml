@@ -1,0 +1,15 @@
+<atlassian-plugin key="com.jtricks.reports.pie" name="Pie Chart Plugin" plugins-version="2">
+	<plugin-info>
+		<description>Pie Chart Example</description>
+		<version>2.0</version>
+		<vendor name="JTricks" url="http://www.j-tricks.com/" />
+	</plugin-info>
+
+	<report key="pie-chart" name="Pie Chart" class="com.jtricks.PieChart">
+	    <description>Sample Pie Chart</description>	 
+	    <label>Eaxmple Pie Chart</label>
+	 
+	    <resource type="velocity" name="view" location="templates/pie/pie-chart.vm" />
+	</report>
+    
+</atlassian-plugin>

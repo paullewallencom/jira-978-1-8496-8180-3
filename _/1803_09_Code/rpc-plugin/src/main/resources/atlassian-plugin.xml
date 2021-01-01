@@ -1,0 +1,15 @@
+<atlassian-plugin key="com.jtricks.rpc" name="J-Tricks RPC Service Plugin">
+<plugin-info>
+    <description>J-Tricks RPC Service Plugin</description>
+    <version>1.0</version>
+    <vendor name="J-Tricks" url="http://www.j-tricks.com/"/>
+</plugin-info>
+ 
+<!-- RPC Module --> 
+<rpc-xmlrpc key="xmlrpc" name="JTricks XML-RPC Services"
+    class="com.jtricks.XmlRpcServiceImpl">
+    <description>The JTricks sample XML-RPC services.</description>
+    <service-path>jtricks</service-path>
+</rpc-xmlrpc>
+
+</atlassian-plugin>

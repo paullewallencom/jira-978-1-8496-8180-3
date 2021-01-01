@@ -1,0 +1,13 @@
+<atlassian-plugin key="com.jtricks.pico-component" name="Pico Component Plugin">
+	<plugin-info>
+		<description>overriding pico components in JIRA</description>
+		<version>2.0</version>
+		<vendor name="JTricks" url="http://www.j-tricks.com/" />
+	</plugin-info>		
+	
+	<component key="subtaskManager" name="My Subtask Manager"
+               class="com.jtricks.MySubtaskManager">
+        <interface>com.atlassian.jira.config.SubTaskManager</interface>
+	</component>
+    
+</atlassian-plugin>

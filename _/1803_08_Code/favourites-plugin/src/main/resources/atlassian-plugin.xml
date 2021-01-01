@@ -1,0 +1,24 @@
+<atlassian-plugin key="com.jtricks.dynamiclinks" name="Dynamic Links Plugin" plugins-version="2">
+	<plugin-info>
+		<description>Dynamic Links creation</description>
+		<version>2.0</version>
+		<vendor name="JTricks" url="http://www.j-tricks.com/" />
+	</plugin-info>
+	
+	<web-item key="favourites-menu" name="Favourites Menu" section="system.top.navigation.bar" weight="900">
+	    <description>Favourites Menu</description>
+	    <label>Favourites</label>
+	    <tooltip>My Favourite Links</tooltip>
+	    <link linkId="favourites-menu">http://www.j-tricks.com</link>
+	</web-item>
+	
+	<web-section key="favourites-section" name="Favourites Dropdown" location="favourites-menu" weight="200">
+	</web-section>
+
+	<simple-link-factory key="favourites-factory" name="Favourites Link Factory"
+                         section="favourites-menu/favourites-section"
+                         i18n-name-key="jtricks.favourites.factory" weight="10"
+                         lazy="true"
+                         class="com.jtricks.web.links.FavouritesLinkFactory"/>
+    
+</atlassian-plugin>

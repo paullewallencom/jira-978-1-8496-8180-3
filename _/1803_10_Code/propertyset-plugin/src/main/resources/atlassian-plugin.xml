@@ -1,0 +1,33 @@
+<atlassian-plugin key="com.jtricks.property-loader" name="Property Loader Plugin" plugins-version="2">
+	<plugin-info>
+		<description>PropertySet Examples</description>
+		<version>2.0</version>
+		<vendor name="JTricks" url="http://www.j-tricks.com/" />
+	</plugin-info>
+	
+	<web-item key="properties-item" name="Properties Link" section="system.admin/globalsettings" weight="900">
+	    <description>Properties Example</description>
+	    <label>Properties</label>
+	    <tooltip>Manage Properties</tooltip>
+	    <link linkId="properties-link">/secure/ManageProperties.jspa</link>
+	</web-item>
+	
+	<webwork1 key="properties-actions" name="Properties Actions" class="java.lang.Object">
+		<actions>
+			<action	name="com.jtricks.web.action.ManageProperties" alias="ManageProperties">
+					<view name="input">/templates/success.vm</view>
+					<view name="success">/templates/success.vm</view>
+			</action>
+		</actions>
+	</webwork1>
+
+	<ao key="ao-module">
+          <description>The configuration of the Active Objects service</description>
+          <entity>com.jtricks.entity.AddressEntity</entity>
+    </ao>         
+
+    <component-import key="ao" name="Active Objects components" interface="com.atlassian.activeobjects.external.ActiveObjects">
+        <description>Access to the Active Objects service</description>
+    </component-import>
+    
+</atlassian-plugin>

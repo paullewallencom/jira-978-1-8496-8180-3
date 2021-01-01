@@ -1,0 +1,38 @@
+<atlassian-plugin key="com.jtricks.issue.manager" name="Issue Manager Plugin" plugins-version="2">
+	<plugin-info>
+		<description>Issue Manager Examples</description>
+		<version>2.0</version>
+		<vendor name="JTricks" url="http://www.j-tricks.com/" />
+	</plugin-info>
+
+	<servlet name="Issue Servlet" key="issueManager" class="com.jtricks.IssueManagerServlet">
+		<description>Creates,Edits Issues</description>
+		<url-pattern>/issueManager</url-pattern>
+	</servlet>
+	
+	<servlet name="Attachment Servlet" key="attachmentManager" class="com.jtricks.AttachmentManagerServlet">
+		<description>Creates Issues and attaches files to it</description>
+		<url-pattern>/attachmentManager</url-pattern>
+	</servlet>
+	
+	<servlet name="Worklog Servlet" key="worklogManager" class="com.jtricks.WorklogManagerServlet">
+		<description>Creates Issues and logs work on it</description>
+		<url-pattern>/worklogManager</url-pattern>
+	</servlet>
+	
+	<servlet name="Comment Servlet" key="commentManager" class="com.jtricks.CommentManagerServlet">
+		<description>Creates Issues and comments on it</description>
+		<url-pattern>/commentManager</url-pattern>
+	</servlet>
+	
+	<servlet name="Link Servlet" key="linkManager" class="com.jtricks.LinkManagerServlet">
+		<description>Creates Issues and links it</description>
+		<url-pattern>/linkManager</url-pattern>
+	</servlet>
+	
+	<servlet name="Changelog Servlet" key="changelogManager" class="com.jtricks.ChangeLogManagerServlet">
+		<description>Creates Issues and adds change log</description>
+		<url-pattern>/changeLogManager</url-pattern>
+	</servlet>
+    
+</atlassian-plugin>

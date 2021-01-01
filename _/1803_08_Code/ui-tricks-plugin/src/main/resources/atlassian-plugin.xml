@@ -1,0 +1,112 @@
+<atlassian-plugin key="com.jtricks.ui" name="UI Enhancement Plugin">
+	<plugin-info>
+		<description>UI Enhancement Example</description>
+		<version>2.0</version>
+		<vendor name="JTricks" url="http://www.j-tricks.com/" />
+	</plugin-info>
+	
+	<project-tabpanel key="jtricks-project-panel" i18n-name-key="projectpanels.jtricks.name" name="JTricks Panel" class="com.jtricks.JTricksProjectTabPanel">
+        <description>A sample Project Tab Panel</description>
+        <label>JTricks Panel</label>
+        <order>900</order>
+        <resource type="velocity" name="view" location="templates/project/project-panel.vm" />
+    </project-tabpanel>
+    
+    <project-tabpanel key="jtricks-project-fragment-panel" i18n-name-key="projectpanels.fragments.jtricks.name" name="JTricks Frag Panel" class="com.atlassian.jira.plugin.projectpanel.impl.JTricksFragProjectTabPanel">
+        <description>A sample Project Tab Panel with fragments</description>
+        <label>JTricks Fragments Panel</label>
+        <order>910</order>
+    </project-tabpanel>
+    
+    <version-tabpanel key="jtricks-version-panel" i18n-name-key="versionpanels.jtricks.name" name="jtricks Version Panel" class="com.jtricks.JTricksVersionTabPanel">
+        <description>A sample Version Tab Panel</description>
+        <label>JTricks Panel</label>
+        <order>900</order>
+        <resource type="velocity" name="view" location="templates/version/version-panel.vm" />
+    </version-tabpanel>
+    
+    <component-tabpanel key="jtricks-component-panel" i18n-name-key="componentpanels.jtricks.name" name="jtricks Component Panel" class="com.jtricks.JTricksComponentTabPanel">
+        <description>A sample Component Tab Panel</description>
+        <label>JTricks Panel</label>
+        <order>900</order>
+        <resource type="velocity" name="view" location="templates/component/component-panel.vm" />
+    </component-tabpanel>
+    
+    <issue-tabpanel key="jtricks-issue-tabpanel" i18n-name-key="issuetabpanel.jtricks.name" name="Issue Tab Panel" class="com.jtricks.JTricksIssueTabPanel">
+        <description>A sample Issue Tab Panel</description>
+        <label>JTricks Panel</label>
+        <resource type="velocity" name="view" location="templates/issue/issue-panel.vm" />
+        <order>100</order>
+        <sortable>true</sortable>
+    </issue-tabpanel>
+
+	<web-item key="jtricks-menu" name="JTricks Menu" section="system.top.navigation.bar" weight="150">
+	    <description>J Tricks Web site</description>
+	    <label>J Tricks</label>
+	    <tooltip>J Tricks Web site</tooltip>
+	    <link linkId="jtricks-menu">http://www.j-tricks.com</link>
+	</web-item>
+
+	<web-item key="jtricks-condition-menu" name="JTricks Condition Menu" section="system.top.navigation.bar" weight="160">
+	    <description>J Tricks Web site with condition</description>
+	    <label>JTricks Conditional Menu</label>
+	    <tooltip>J Tricks Web site</tooltip>
+	    <link linkId="jtricks-condition-menu">http://www.j-tricks.com</link>
+	    <condition class="com.jtricks.conditions.DeveloperCondition"/>
+	</web-item>
+	
+	<web-section key="jtricks-section" name="JTricks Dropdown" location="jtricks-menu" weight="200">
+	</web-section>
+	
+	<web-item key="jtricks-item" name="Jtricks Item" section="jtricks-menu/jtricks-section" weight="210">
+	    <description>J Tricks Tutorials</description>
+	    <label>J Tricks Tutorials</label>
+	    <tooltip>Tutorials from J Tricks</tooltip>
+	    <link linkId="jtricks.link">http://www.j-tricks.com/tutorials</link>
+	</web-item>
+
+	 <web-section key="jtricks-admin-section" name="JTricks Section" location="system.admin" i18n-name-key="webfragments.admin.jtricks.section" weight="900">
+        <label>J Tricks</label>
+     </web-section>
+
+     <web-item key="jtricks-admin-link" name="JTricks Link" section="system.admin/jtricks-admin-section" i18n-name-key="webfragments.admin.jtricks.item" weight="10">
+        <label>J Tricks Website</label>
+       	<link linkId="jtricks.admin.link">http://www.j-tricks.com</link>
+     </web-item>
+     
+     <web-section key="jtricks-admin-context-section" name="JTricks Context Section" location="system.admin" i18n-name-key="webfragments.admin.context.jtricks.section" weight="910">
+            <label>$userName</label>
+            <context-provider class="com.jtricks.context.UserContextProvider" />
+     </web-section>
+      
+     <web-item key="jtricks-admin-context-link" name="JTricks Context Link" section="system.admin/jtricks-admin-context-section" i18n-name-key="webfragments.admin.context.jtricks.item" weight="10">
+		<label>Website</label>
+		<link linkId="jtricks.admin.context.link">http://www.j-tricks.com</link>
+	 </web-item>
+     
+     <webwork1 key="clone-issue" name="Clone Issue with new UI elements" class="java.lang.Object">
+   		<description>Sample Webwork action with extended UI elements</description>
+		<actions>    
+    		<action name="com.jtricks.web.action.ExtendedCloneIssueDetails" alias="CloneIssueDetails">
+		        <view name="input">/secure/views/extended-cloneissue-start.jsp</view>
+		        <view name="error">/secure/views/extended-cloneissue-start.jsp</view>
+		    </action>
+    	</actions>
+    </webwork1>
+    
+    <webwork1 key="view-issue" name="View Issue with warning" class="java.lang.Object">
+   		<description>View Issue Screen with Warnings</description>
+		<actions>
+		    <action name="com.jtricks.web.action.ExtendedViewIssue" alias="ViewIssue">
+		        <view name="success">/secure/views/issue/extended-viewissue.jsp</view>
+		        <view name="issuenotfound">/secure/views/issuenotfound.jsp</view>
+		        <view name="permissionviolation">/secure/views/permissionviolation.jsp</view>
+		
+		        <command name="moveIssueLink" alias="MoveIssueLink">
+		            <view name="error">/secure/views/issue/viewissue.jsp</view>
+		        </command>
+		    </action>
+    	</actions>
+    </webwork1>
+    
+</atlassian-plugin>

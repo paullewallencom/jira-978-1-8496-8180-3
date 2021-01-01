@@ -1,0 +1,21 @@
+<atlassian-plugin key="com.jtricks.gadgets" name="Gadgets Plugin" plugins-version="2">
+	<plugin-info>
+		<description>Gadgets Example</description>
+		<version>2.0</version>
+		<vendor name="JTricks" url="http://www.j-tricks.com/" />
+	</plugin-info>
+
+	<gadget key="hello-gadget" name="Hello Gadget" location="hello-gadget.xml">
+	    <description>
+		Hello Gadget!
+	    </description>
+	</gadget>
+
+	<resource type="download" name="screenshot.png" location="/images/screenshot.png"/>
+	<resource type="download" name="thumbnail.png" location="/images/thumbnail.png"/>
+
+	<resource type="download" name="i18n/messages.xml" location="i18n/messages.xml">
+	    <param name="content-type" value="text/xml; charset=UTF-8"/>
+	</resource>
+    
+</atlassian-plugin>

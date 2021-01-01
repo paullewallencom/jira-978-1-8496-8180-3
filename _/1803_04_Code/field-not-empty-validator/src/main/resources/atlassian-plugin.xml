@@ -1,0 +1,25 @@
+<atlassian-plugin key="com.jtricks.workflow.validator" name="J-Tricks WorkFlow Validator Plugin"  plugins-version="2">
+<plugin-info>
+    <description>J-Tricks WorkFlow Validator Plugin</description>
+    <version>1.0</version>
+    <vendor name="J-Tricks" url="http://www.j-tricks.com"/>
+</plugin-info>
+ 
+<!-- Field Not Empty Workflow Validator --> 
+<workflow-validator key="field-validator" name="Field Validator" 
+    class="com.jtricks.FieldValidatorFactory">
+    <description>Field Not Empty Workflow Validator</description>
+
+    <validator-class>
+        com.jtricks.FieldValidator
+    </validator-class>
+
+    <resource type="velocity" name="view" 
+        location="templates/com/jtricks/view-fieldValidator.vm"/>
+    <resource type="velocity" name="input-parameters" 
+        location="templates/com/jtricks/edit-fieldValidator.vm"/>
+    <resource type="velocity" name="edit-parameters" 
+        location="templates/com/jtricks/edit-fieldValidator.vm"/>
+</workflow-validator>
+
+</atlassian-plugin>

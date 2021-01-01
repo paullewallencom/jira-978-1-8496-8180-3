@@ -1,0 +1,17 @@
+<atlassian-plugin key="com.jtricks.customfields" name="J-Tricks Customfields Plugin"  plugins-version="2">
+<plugin-info>
+    <description>J-Tricks Customfields Plugin</description>
+    <version>1.0</version>
+    <vendor name="J-Tricks" url="http://www.j-tricks.com"/>
+</plugin-info>
+ 
+<!-- Read Only Custom Field to store user details --> 
+<customfield-type key="readonly-user" name="Read Only User CF" 
+class="com.jtricks.ReadOnlyUserCF"> 
+      <description>Read Only User CF Description</description> 
+	  <resource type="velocity" name="view" location="templates/com/jtricks/view-readonly-user.vm" /> 
+	  <resource type="velocity" name="column-view" location="templates/com/jtricks/view-readonly-user.vm" />
+	  <resource type="velocity" name="edit" location="templates/com/jtricks/edit-readonly-user.vm" /> 
+</customfield-type>
+
+</atlassian-plugin>

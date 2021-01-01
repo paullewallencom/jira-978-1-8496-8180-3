@@ -1,0 +1,8 @@
+<div class="mod-header">
+    <h3>Fragment 2</h3>
+</div>
+<div class="mod-content">
+    <ul class="item-details">
+        <li>This is fragment 2!!</li>
+    </ul>
+</div>

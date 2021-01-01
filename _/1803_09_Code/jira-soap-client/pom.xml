@@ -1,0 +1,130 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.atlassian.jira.plugins</groupId>
+        <artifactId>atlassian-jira-rpc-parent</artifactId>
+        <version>4.1.1-1</version>
+    </parent>
+
+    <groupId>com.atlassian.jira.plugins</groupId>
+    <artifactId>jira-soapclient</artifactId>
+
+    <name>JIRA SOAP Client</name>
+    <description>A plugin which provides a sample SOAP implementation.</description>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>axistools-maven-plugin</artifactId>
+                <version>1.3</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>axis</groupId>
+                        <artifactId>axis</artifactId>
+                        <version>1.3</version>
+                    </dependency>
+                </dependencies>
+                <configuration>
+                    <wsdlFiles>
+                        <wsdlFile>jirasoapservice-v2.wsdl</wsdlFile>
+                    </wsdlFiles>
+                    <packageSpace>com.atlassian.jira.rpc.soap.client</packageSpace>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>wsdl2java-generation</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>wsdl2java</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>com.atlassian.jira_soapclient.SOAPClient</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>buildclient</id>
+            <build>
+                <defaultGoal>assembly:assembly</defaultGoal>
+            </build>
+        </profile>
+        <profile>
+            <id>fetch-wsdl</id>
+            <build>
+                <defaultGoal>generate-sources</defaultGoal>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-antrun-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <phase>generate-sources</phase>
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
+                                <configuration>
+                                    <tasks>
+                                        <get src="${jira.soapclient.jiraurl}/rpc/soap/jirasoapservice-v2?wsdl"
+                                             dest="${basedir}/src/main/wsdl/jirasoapservice-v2.wsdl"/>
+                                    </tasks>
+                                </configuration>
+                            </execution>
+                        </executions>
+                        <dependencies>
+                            <dependency>
+                                <groupId>axis</groupId>
+                                <artifactId>axis-ant</artifactId>
+                                <version>1.3</version>
+                            </dependency>
+                        </dependencies>
+                    </plugin>
+                </plugins>
+            </build>
+            <properties>
+                <jira.soapclient.jiraurl>http://jira.atlassian.com</jira.soapclient.jiraurl>
+            </properties>
+        </profile>
+    </profiles>
+
+    <dependencies>
+        <dependency>
+            <groupId>axis</groupId>
+            <artifactId>axis</artifactId>
+            <version>1.3</version>
+        </dependency>
+        <dependency>
+            <groupId>axis</groupId>
+            <artifactId>axis-jaxrpc</artifactId>
+            <version>1.3</version>
+        </dependency>
+        <dependency>
+            <groupId>axis</groupId>
+            <artifactId>axis-saaj</artifactId>
+            <version>1.3</version>
+        </dependency>
+        <dependency>
+            <groupId>axis</groupId>
+            <artifactId>axis-wsdl4j</artifactId>
+            <version>1.5.1</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+
+</project>

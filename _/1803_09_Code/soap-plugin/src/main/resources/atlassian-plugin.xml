@@ -1,0 +1,19 @@
+<atlassian-plugin key="com.jtricks.soap" name="J-Tricks SOAP Service Plugin">
+<plugin-info>
+    <description>J-Tricks SOAP Service Plugin</description>
+    <version>1.0</version>
+    <vendor name="J-Tricks" url="http://www.j-tricks.com/"/>
+</plugin-info>
+ 
+<!-- SOAP Module --> 
+<component key="jtricks-soap-component" name="JTricks SOAP Component" class="com.jtricks.JTricksSoapServiceImpl">
+    <interface>com.jtricks.JTricksSoapService</interface>
+</component>
+
+<rpc-soap key="jtricks-soap-service" name="JTricks SOAP Service" class="com.jtricks.JTricksSoapServiceImpl">
+    <description>JTricks SOAP service.</description>
+    <service-path>jtricksservice</service-path>
+    <published-interface>com.jtricks.JTricksSoapService</published-interface>
+</rpc-soap>
+
+</atlassian-plugin>

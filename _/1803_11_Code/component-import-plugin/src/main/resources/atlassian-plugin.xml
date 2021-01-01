@@ -1,0 +1,20 @@
+<atlassian-plugin key="com.jtricks.component-import" name="Component Import Plugin" plugins-version="2">
+	<plugin-info>
+		<description>Adding and importing components to JIRA</description>
+		<version>2.0</version>
+		<vendor name="JTricks" url="http://www.j-tricks.com/" />
+	</plugin-info>		
+	
+	<component-import key="myComponent">
+        	<interface>com.jtricks.provider.MyComponent</interface>
+	</component-import>
+	
+	<webwork1 key="redirect-key" name="Redirect Action" class="java.lang.Object">
+	    <actions>
+			<action name="com.jtricks.RedirectActionNew" alias="RedirectActionNew">
+			    <view name="input">/templates/redirect.vm</view>
+			</action>
+	    </actions>
+	</webwork1>	
+    
+</atlassian-plugin>

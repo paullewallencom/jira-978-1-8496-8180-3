@@ -1,0 +1,19 @@
+<atlassian-plugin key="com.jtricks.actions" name="J-Tricks Extend Action Plugin"  plugins-version="2">
+<plugin-info>
+    <description>J-Tricks Extend Action Plugin</description>
+    <version>1.0</version>
+    <vendor name="J-Tricks" url="http://www.j-tricks.com/"/>
+</plugin-info>
+ 
+<!-- Demo Action --> 
+<webwork1 key="demoaction" name="JTricks Demo Action" class="java.lang.Object">
+    <actions>
+        <action name="com.jtricks.DemoAction" alias="DemoAction">
+            <view name="input">/templates/input.vm</view>
+		    <view name="success">/templates/joy.vm</view>
+		    <view name="error">/templates/tears.vm</view>
+        </action>
+    </actions>
+</webwork1>
+
+</atlassian-plugin>

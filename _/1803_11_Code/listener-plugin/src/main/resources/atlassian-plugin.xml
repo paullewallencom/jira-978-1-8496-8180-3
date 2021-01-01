@@ -1,0 +1,12 @@
+<atlassian-plugin key="com.jtricks.listener" name="Listener Plugin" plugins-version="2">
+	<plugin-info>
+		<description>Listener to capture events!</description>
+		<version>2.0</version>
+		<vendor name="JTricks" url="http://www.j-tricks.com/" />
+	</plugin-info>
+
+	<component-import key="eventPublisher" interface="com.atlassian.event.api.EventPublisher"/>
+	<component key="eventListener" class="com.jtricks.NewEventListener">
+	    <description>Class that processes the new JIRA Event</description>
+	</component>	
+</atlassian-plugin>

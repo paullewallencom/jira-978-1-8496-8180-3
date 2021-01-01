@@ -1,0 +1,29 @@
+<atlassian-plugin key="com.jtricks.workflow.condition" name="J-Tricks WorkFlow Conditions Plugin"  plugins-version="2">
+<plugin-info>
+    <description>J-Tricks WorkFlow Plugin</description>
+    <version>1.0</version>
+    <vendor name="J-Tricks" url="http://www.j-tricks.com/"/>
+</plugin-info>
+ 
+<!-- Role Based Workflow Condition --> 
+<workflow-condition key="role-condition" name="Role Based Condition" 
+    class="com.jtricks.RoleConditionFactory">
+    <description>Role Based Workflow Condition</description>
+
+    <condition-class>
+        com.jtricks.RoleCondition
+    </condition-class>
+
+    <orderable>true</orderable>
+    <unique>false</unique>
+    <deletable>true</deletable>
+
+    <resource type="velocity" name="view" 
+        location="templates/com/jtricks/view-roleCondition.vm"/>
+    <resource type="velocity" name="input-parameters" 
+        location="templates/com/jtricks/edit-roleCondition.vm"/>
+    <resource type="velocity" name="edit-parameters" 
+        location="templates/com/jtricks/edit-roleCondition.vm"/>
+</workflow-condition>
+
+</atlassian-plugin>

@@ -1,0 +1,5 @@
+<messagebundle>
+	<msg name="gadget.title">Hello Gadget</msg>
+	<msg name="gadget.title.url">http://www.j-tricks.com</msg>
+	<msg name="gadget.description">Example Gadget from J-Tricks</msg>
+</messagebundle>

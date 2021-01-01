@@ -1,0 +1,40 @@
+<atlassian-plugin key="com.jtricks.servlet" name="Servlet Plugin" plugins-version="2">
+	<plugin-info>
+		<description>Servlet Examples</description>
+		<version>2.0</version>
+		<vendor name="JTricks" url="http://www.j-tricks.com/" />
+	</plugin-info>
+
+	<servlet name="Test Servlet" key="jtricksServlet" class="com.jtricks.JTricksServlet">
+		<description>Test Servlet</description>
+		<url-pattern>/myWebsite</url-pattern>
+		<init-param>
+            <param-name>siteName</param-name>
+            <param-value>Atlassian</param-value>
+        </init-param>
+        <init-param>
+            <param-name>siteAddress</param-name>
+            <param-value>http://www.atlassian.com/</param-value>
+        </init-param>
+	</servlet>
+	
+	<servlet-context-param key="jtricksContext">
+        <description>Shares this param!</description>
+        <param-name>sharedText</param-name>
+        <param-value>This is a shared Text</param-value>
+    </servlet-context-param>
+    
+    <servlet-filter name="Browse Issue Filter" key="jtricksServletFilter" class="com.jtricks.JTricksServletFilter" location="before-dispatch" weight="200">
+        <description>Filter for Browse Issue</description>
+        <url-pattern>/browse/*-*</url-pattern>
+        <init-param>
+            <param-name>filterName</param-name>
+            <param-value>JTricks Filter</param-value>
+        </init-param>
+    </servlet-filter>
+	
+	<servlet-context-listener name="Test Servlet Listener" key="jtricksServletListener" class="com.jtricks.JTricksServletListener">
+        <description>Listener for Test Servlet</description>
+    </servlet-context-listener>
+    
+</atlassian-plugin>

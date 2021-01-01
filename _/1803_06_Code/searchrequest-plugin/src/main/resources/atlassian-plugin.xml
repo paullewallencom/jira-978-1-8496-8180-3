@@ -1,0 +1,17 @@
+<atlassian-plugin key="com.jtricks.searchrequest" name="Search Request View Plugin" plugins-version="2">
+	<plugin-info>
+		<description>Search Request View Example</description>
+		<version>2.0</version>
+		<vendor name="JTricks" url="http://www.j-tricks.com/" />
+	</plugin-info>
+
+	<search-request-view key="simple-searchrequest-html" name="Simple HTML View"
+                         class="com.jtricks.SimpleSearchRequestHTMLView" state='enabled'
+                         fileExtension="html" contentType="text/html">
+		<resource type="velocity" name="header" location="templates/searchrequest-html-header.vm"/>
+		<resource type="velocity" name="body" location="templates/searchrequest-html-body.vm"/>
+		<resource type="velocity" name="footer" location="templates/searchrequest-html-footer.vm"/>
+		<order>200</order>
+	 </search-request-view>
+    
+</atlassian-plugin>

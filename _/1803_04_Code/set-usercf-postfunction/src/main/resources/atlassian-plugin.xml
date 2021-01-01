@@ -1,0 +1,25 @@
+<atlassian-plugin key="com.jtricks.workflow.postfunction" name="J-Tricks WorkFlow Post Function Plugin"  plugins-version="2">
+<plugin-info>
+    <description>J-Tricks WorkFlow Plugin</description>
+    <version>1.0</version>
+    <vendor name="J-Tricks" url="http://www.j-tricks.com"/>
+</plugin-info>
+ 
+<!-- Post Function Sample --> 
+<workflow-function key="set-usercf" name="Set User CF Post Function" 
+    class="com.jtricks.SetUserCFFunctionFactory">
+    <description>Set Defined User or Current User</description>
+
+    <function-class>com.jtricks.SetUserCFFunction</function-class>
+
+    <orderable>true</orderable>
+    <unique>false</unique>
+    <deletable>true</deletable>
+
+    <resource type="velocity" name="view" location="templates/com/jtricks/view-userCFFunction.vm"/>
+    <resource type="velocity" name="input-parameters"  location="templates/com/jtricks/workflow.postguntion.vm"/>
+    <resource type="velocity" name="edit-parameters" 
+        location="templates/com/jtricks/edit-userCFFunction.vm"/>
+</workflow-function>
+
+</atlassian-plugin>

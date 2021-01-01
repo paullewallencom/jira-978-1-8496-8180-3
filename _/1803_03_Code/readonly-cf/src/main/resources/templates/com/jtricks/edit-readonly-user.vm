@@ -1,0 +1,6 @@
+#controlHeader ($action $customField.id $customField.name $fieldLayoutItem.required $displayParameters.noHeader)
+
+<input type="text" name="$customField.id" value="$currentUser" id="$customField.id"
+       class="textfield" readonly="readonly" #if ($configs.styles.style) style="$configs.styles.style" #end />
+
+#controlFooter ($action $fieldLayoutItem.fieldDescription $displayParameters.noHeader)

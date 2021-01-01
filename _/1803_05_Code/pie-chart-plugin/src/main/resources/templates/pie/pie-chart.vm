@@ -1,0 +1,15 @@
+Sample Chart: <br><br>
+<table width="100%" class="report">
+	<tr>
+            <td>
+                #if ($chart)
+                    #if ($imagemap)
+                        $imagemap
+                    #end
+                    <p class="report-chart">
+                        <img src='$baseurl/charts?filename=$chart' border='0' #if ($imagemap) usemap="\#$imagemapName" #end/>
+                    </p>
+                #end
+            </td>
+    </tr>
+</table>
